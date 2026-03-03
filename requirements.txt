@@ -1,0 +1,14 @@
+# Core Deep Learning
+torch>=2.4.0
+numpy>=1.26.0
+
+# Transformer Utilities
+transformers>=4.40.0
+tokenizers>=0.19.0
+
+# Configuration and Progress
+PyYAML>=6.0.1
+tqdm>=4.66.0
+
+# Optional: For better hardware monitoring during training
+psutil>=5.9.0

@@ -1,0 +1,24 @@
+# configs/rtx_500_small.yaml
+
+model:
+  hidden_size: 512
+  num_layers: 8
+  num_heads: 8
+  context_window: 512
+training:
+  batch_size: 4 # Small batch size + Gradient Accumulation
+  grad_accum_steps: 8 
+  mixed_precision: "fp16" # Essential for Ada architecture
+
+
+
+# Only the changes needed for low VRAM
+
+# model:
+#   hidden_size: 384           # Smaller embedding
+#   num_layers: 6              # Fewer layers
+#   context_window: 256        # Shorter memory to save VRAM
+
+# training:
+#   batch_size: 2              # Very small batch for 4GB
+#   grad_accum_steps: 16       # Accumulate to reach effective batch size of 32

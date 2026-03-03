@@ -1,0 +1,26 @@
+# configs/base_config.yaml
+
+project_name: "small-language-model"
+seed: 42
+
+model:
+  vocab_size: 50257          # GPT-2 standard
+  hidden_size: 768           # Standard "base" size
+  num_layers: 12
+  num_heads: 12
+  context_window: 1024       # Max tokens the model sees
+  dropout: 0.1
+
+training:
+  learning_rate: 5.0e-4
+  weight_decay: 0.01
+  batch_size: 32             # Ideal batch size
+  epochs: 10
+  mixed_precision: "fp16"    # Standard for modern GPUs
+  save_interval: 1000        # Steps between checkpoints
+  grad_clip: 1.0
+
+paths:
+  train_data: "data/processed/train.bin"
+  val_data: "data/processed/val.bin"
+  checkpoint_dir: "checkpoints/"
